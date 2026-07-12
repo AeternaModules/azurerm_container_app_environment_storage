@@ -1,3 +1,7 @@
+output "container_app_environment_storages_id" {
+  description = "Map of id values across all container_app_environment_storages, keyed the same as var.container_app_environment_storages"
+  value       = { for k, v in azurerm_container_app_environment_storage.container_app_environment_storages : k => v.id }
+}
 output "container_app_environment_storages_access_key" {
   description = "Map of access_key values across all container_app_environment_storages, keyed the same as var.container_app_environment_storages"
   value       = { for k, v in azurerm_container_app_environment_storage.container_app_environment_storages : k => v.access_key }
